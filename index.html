@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Smart Expense Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="header">
+
+        <h1> Smart Expense Analyzer</h1>
+
+        <p>
+            AI Powered Expense Tracking using
+            AWS Rekognition, Polly, SNS and DynamoDB
+        </p>
+
+    </div>
+
+
+    <div class="dashboard">
+
+        <div class="card">
+
+            <h3>Total Expense</h3>
+
+            <h2 id="totalExpense">
+                Loading...
+            </h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Total Bills</h3>
+
+            <h2 id="totalBills">
+                Loading...
+            </h2>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Latest Expense</h3>
+
+            <h2 id="latestExpense">
+                Loading...
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="history">
+
+        <h2> Bill History</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Bill ID</th>
+                    <th>Amount</th>
+                    <th>Voice Summary</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="expenseTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script src="script-v2.js"></script>
+
+</body>
+
+</html>
