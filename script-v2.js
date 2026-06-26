@@ -203,7 +203,7 @@ document.getElementById("dateSummaryTable").innerHTML =
             <tr>
                 <td>${item.Bill_Id}</td>
                 <td>${formatINR(item.Amount)}</td>
-                <td>${voiceButton}</td>
+                <td>${voiceStatus}</td>
             </tr>
             `;
 
