@@ -2,91 +2,68 @@
 <html>
 
 <head>
-
-    <title>Smart Expense Analyzer </title>
-
+    <title>Smart Expense Analyzer</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-    <div class="header">
-
-        <h1> Smart Expense Analyzer v2</h1>
-
-        <p>
-            AI Powered Expense Tracking 
-           
-        </p>
-
-    </div>
-
+    <h1>💰 Smart Expense Analyzer</h1>
 
     <div class="dashboard">
 
         <div class="card">
-
-            <h3>Total Expense</h3>
-
-            <h2 id="totalExpense">
-                Loading...
-            </h2>
-
+            <h2>Total Expense</h2>
+            <p id="totalExpense">Loading...</p>
         </div>
+
         <div class="card">
             <h2>Monthly Expense</h2>
             <p id="monthlyExpense">Loading...</p>
-       </div>
-
-        <div class="card">
-
-            <h3>Total Bills</h3>
-
-            <h2 id="totalBills">
-                Loading...
-            </h2>
-
         </div>
 
         <div class="card">
+            <h2>Total Bills</h2>
+            <p id="totalBills">Loading...</p>
+        </div>
 
-            <h3>Latest Expense</h3>
-
-            <h2 id="latestExpense">
-                Loading...
-            </h2>
-
+        <div class="card">
+            <h2>Latest Expense</h2>
+            <p id="latestExpense">Loading...</p>
         </div>
 
     </div>
 
+    <h2>📅 Daily Expense Summary</h2>
 
-    <div class="history">
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Total Expense</th>
+            </tr>
+        </thead>
 
-        <h2> Bill History</h2>
+        <tbody id="dateSummaryTable">
 
-        <table>
+        </tbody>
+    </table>
 
-            <thead>
+    <h2>🧾 Bill History</h2>
 
-                <tr>
+    <table>
+        <thead>
+            <tr>
+                <th>Bill ID</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+        </thead>
 
-                    <th>Bill ID</th>
-                    <th>Amount</th>
-                    <th>Voice Summary</th>
+        <tbody id="expenseTable">
 
-                </tr>
-
-            </thead>
-
-            <tbody id="expenseTable">
-
-            </tbody>
-
-        </table>
-
-    </div>
+        </tbody>
+    </table>
 
     <script src="script-v2.js"></script>
 
