@@ -118,6 +118,26 @@ async function loadDashboard() {
             "totalBills"
         ).innerHTML =
             expenses.length;
+        let monthlyTotal = 0;
+
+          const currentMonth = new Date().getMonth();
+          const currentYear = new Date().getFullYear();
+
+           expenses.forEach(item => {
+
+           const expenseDate = new Date(item.Date);
+
+    if (
+        expenseDate.getMonth() === currentMonth &&
+        expenseDate.getFullYear() === currentYear
+    ) {
+        monthlyTotal += parseInt(item.Amount || 0);
+    }
+
+});
+
+document.getElementById("monthlyExpense").innerHTML =
+    formatINR(monthlyTotal);
 
         // ==========================
         // LATEST EXPENSE
@@ -133,6 +153,33 @@ async function loadDashboard() {
                 );
 
         }
+            let dateTotals = {};
+
+expenses.forEach(item => {
+
+    const date = item.Date;
+
+    if (!dateTotals[date]) {
+        dateTotals[date] = 0;
+    }
+
+    dateTotals[date] += parseInt(item.Amount || 0);
+
+});
+
+let summaryTable = "";
+
+for (const date in dateTotals) {
+
+    summaryTable += `
+    <tr>
+        <td>${date}</td>
+        <td>${formatINR(dateTotals[date])}</td>
+    </tr>`;
+}
+
+document.getElementById("dateSummaryTable").innerHTML =
+    summaryTable;
 
         // ==========================
         // TABLE
@@ -147,13 +194,8 @@ async function loadDashboard() {
 
             if (item.Audio_URL) {
 
-                voiceButton = `
-                <button
-                    class="voice-btn"
-                    onclick="playVoice('${item.Audio_URL}')">
-                    Play Voice
-                </button>
-                `;
+               
+            
 
             }
 
